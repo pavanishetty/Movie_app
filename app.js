@@ -7,8 +7,13 @@ app = express();
 
 mongoose.Promise = global.Promise;
 
+
+
 //APP CONFIG
-mongoose.connect("mongodb://localhost/movie_app",{useMongoClient: true});
+//mongoose.connect("mongodb://localhost/movie_app",{useMongoClient: true});
+mongoose.connect("mongodb://pavani:tictacto@ds115352.mlab.com:15352/moviedb123",{useMongoClient: true});
+
+
 app.set("view engine","ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended:true}));
@@ -238,5 +243,7 @@ app.delete("/directors/:id", function(req, res){
     })
 }); 
 
-app.listen(process.env.PORT || 5000);
+app.listen(process.env.PORT || 5000, function(){
+    console.log("Movie App Server Has Started");
+});
 
