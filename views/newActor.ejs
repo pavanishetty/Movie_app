@@ -1,0 +1,31 @@
+<% include ./partials/header %>
+<div class="ui main text container segment">
+     <div class="ui huge header">New Actor</div>
+       <form class="ui form" action="/actors" method="POST">
+         <div class="field">
+             <label>Title</label>
+             <input type="text" name="actor[name]" placeholder="title" required>
+         </div>
+         <div class="field">
+             <label>Image</label>
+             <input type="text" name="actor[image]" placeholder="image" required>
+         </div>
+         <div class="field">
+             <label>Age</label>
+             <input type="number" min="1" max="125" name="actor[age]" placeholder="age" required>
+         </div>
+         <div class="field">
+             <label>Gender</label>
+            <select name="actor[gender]" >
+                 <option  value="M">M</option>
+                  <option  value="F">F</option>
+             </select>
+         </div>
+         <div class="field">
+             <label>Movies Acted In</label>
+             <input type="text" name="actor[movies_acted_in]" placeholder="movies acted in">
+         </div>
+          <input class="ui violet big basic button" type="submit">
+       </form>
+</div>
+<% include ./partials/footer %>

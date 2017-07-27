@@ -1,0 +1,24 @@
+<% include ./partials/header %>
+<div class="ui main text container segment">
+     <div class="ui huge header"><%= actor.name %></div>
+     <div class="ui top attached ">
+         <div class="item">
+           <img  class="ui centered rounded image" src="<%= actor.image %>" ><br/>
+          <div class="item">
+            <h4>Age : <%= actor.age %></h4>
+          </div>  
+          <div class="item">
+            <h4>Gender : <%= actor.gender %></h4>
+          </div>  
+          <div class="item">
+            <h4>Movies Acted In : <%= actor.movies_acted_in %></h4>
+          </div> 
+          <br>
+        <a class="ui orange basic button" href="/actors/<%= actor._id %>/edit">Edit</a>
+        <form class=" delete" action="/actors/<%= actor._id %>?_method=DELETE"  method= "POST">
+          <button class="ui red basic button">DELETE</button>
+        </form>
+     </div>
+       
+</div>
+<% include ./partials/footer %>
